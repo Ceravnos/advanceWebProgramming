@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.index {
+  background-color: #0D1138;
+  color: white;
+  font-family: Arial;
+  /* Not sure paano mag import ng same font sa Figma */
+
+}
+
+.greet {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 100px;
+}

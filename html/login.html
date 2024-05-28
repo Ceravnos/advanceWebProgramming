@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+      html,
+      body {
+        justify-content: center;
+      }
+
+      .login-container {
+        font-size: 40px;
+        margin-top: 50px;
+        text-align: center;
+      }
+      .login-container input[type="text"] {
+        width: 300px;
+        height: 50px;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+      .login-container input[type="submit"] {
+        width: 90px;
+        height: 50px;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var storedUsername = sessionStorage.getItem("username");
+        if (storedUsername) {
+          window.location.href = "index.html";
+        }
+      });
+
+      function login(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        sessionStorage.setItem("username", username);
+        window.location.href = "index.html";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="login-container">
+      Hello, what is your name?<br />
+      <form id="loginForm">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+        />
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+          onclick="login(event)"
+        />
+      </form>
+    </div>
+  </body>
+</html>
